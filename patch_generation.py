@@ -4,14 +4,13 @@ from skimage.filters import threshold_li
 from skimage import color, measure, io, transform
 import cv2
 import openslide
-from ImageFormatReader import ImageFormatReader
 
 class ImageReader:
 
     def __init__(self, image_path : str, tile_size : int, padding : int = None):
 
         self.reader = openslide.open_slide(image_path) 
-        self.max_mag = int(ImageFormatReader(image_path, 1024, 4, create_single_ROI=True).getMaxResolution())
+        self.max_mag = int(self.reader.properties['openslide.objective-power'])
 
         self.tile_size = tile_size
         self.padding = padding
