@@ -1,3 +1,7 @@
+__author__ = "Bibhabasu Mohapatra"
+__copyright__ = "Copyright 2023,"
+__credits__ = ["Bibhabasu Mohapatra", "OpenSlide: A Vendor-Neutral Software Foundation for Digital Pathology"]
+
 import numpy as np
 
 from skimage.filters import threshold_li
